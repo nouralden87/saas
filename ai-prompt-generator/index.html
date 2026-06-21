@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free AI Prompt Generator — Optimized Prompts for AI Agents | Hermes Tools</title>
+    <meta name="description" content="Generate optimized AI prompts for any task. Free, no sign-up. Get perfect prompts for ChatGPT, Claude, Gemini, and AI agents like Hermes.">
+    <meta name="keywords" content="ai prompt generator, free ai prompt generator, prompt generator, ai prompt builder, prompt optimizer">
+    <meta property="og:title" content="Free AI Prompt Generator — Optimized Prompts for AI Agents">
+    <meta property="og:description" content="Generate optimized AI prompts for any task. Free, no sign-up required.">
+    <link rel="canonical" href="https://hermes.ai/tools/ai-prompt-generator">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: #0a0a0f;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 720px;
+            width: 100%;
+            padding: 40px 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .logo {
+            font-size: 14px;
+            letter-spacing: 3px;
+            color: #666;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #a78bfa, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            color: #888;
+            font-size: 1.05rem;
+        }
+        .card {
+            background: #14141f;
+            border: 1px solid #1e1e2e;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+        label {
+            display: block;
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        select, textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background: #0a0a0f;
+            border: 1px solid #1e1e2e;
+            border-radius: 10px;
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+        select:focus, textarea:focus {
+            outline: none;
+            border-color: #6366f1;
+        }
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 16px;
+            transition: opacity 0.2s, transform 0.1s;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+        .btn:active {
+            transform: scale(0.98);
+        }
+        .output {
+            background: #0a0a0f;
+            border: 1px solid #1e1e2e;
+            border-radius: 12px;
+            padding: 20px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            white-space: pre-wrap;
+            word-break: break-word;
+            min-height: 60px;
+            color: #c4b5fd;
+            margin-top: 12px;
+        }
+        .cta-section {
+            text-align: center;
+            padding: 32px 0;
+            margin-top: 20px;
+        }
+        .cta-section h2 {
+            font-size: 1.5rem;
+            color: #e0e0e0;
+            margin-bottom: 8px;
+        }
+        .cta-section p {
+            color: #888;
+            margin-bottom: 20px;
+        }
+        .cta-btn {
+            display: inline-block;
+            padding: 14px 40px;
+            background: linear-gradient(135deg, #a78bfa, #6366f1);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: opacity 0.2s;
+        }
+        .cta-btn:hover {
+            opacity: 0.9;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .tool-chip {
+            padding: 10px 16px;
+            background: #14141f;
+            border: 1px solid #1e1e2e;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #999;
+            text-decoration: none;
+            transition: border-color 0.2s;
+        }
+        .tool-chip:hover {
+            border-color: #6366f1;
+            color: #e0e0e0;
+        }
+        footer {
+            text-align: center;
+            color: #555;
+            font-size: 0.8rem;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: #c4b5fd; }
+
+        .copy-btn {
+            background: transparent;
+            border: 1px solid #333;
+            color: #888;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            float: right;
+        }
+        .copy-btn:hover { border-color: #6366f1; color: #e0e0e0; }
+        .tool-badge {
+            display: inline-block;
+            background: #1a1a2e;
+            color: #8b5cf6;
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.6rem; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Hermes Free Tools</div>
+            <h1>AI Prompt Generator</h1>
+            <p class="subtitle">Generate optimized prompts for any AI agent — ChatGPT, Claude, Gemini, Hermes, and more.</p>
+        </header>
+
+        <div class="card">
+            <span class="tool-badge">⚡ Free · No Sign-up</span>
+            <label>What do you want the AI to do?</label>
+            <textarea id="taskInput" placeholder="e.g., Write a cold email to a potential client, Create a Python script that scrapes data, Explain quantum computing to a 5-year-old..."></textarea>
+
+            <label style="margin-top:16px;">AI Model Target</label>
+            <select id="modelSelect">
+                <option value="general">General AI (ChatGPT, Claude, Gemini)</option>
+                <option value="coding">Coding Assistant (GitHub Copilot, Cursor)</option>
+                <option value="agent">AI Agent (Hermes, AutoGPT)</option>
+                <option value="creative">Creative (Midjourney, DALL·E prompts)</option>
+            </select>
+
+            <label style="margin-top:16px;">Tone</label>
+            <select id="toneSelect">
+                <option value="professional">Professional</option>
+                <option value="casual">Casual</option>
+                <option value="technical">Technical / Expert</option>
+                <option value="creative">Creative</option>
+            </select>
+
+            <button class="btn" onclick="generatePrompt()">⚡ Generate Prompt</button>
+            <div class="output" id="output" style="display:none;"></div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Want a Full AI Agent That Does This & More?</h2>
+            <p>Hermes is a personal AI agent that writes, codes, researches, and automates your work — across Telegram, CLI, and desktop.</p>
+            <a href="https://hermesagent.com" class="cta-btn" target="_blank">🚀 Try Hermes Agent Free</a>
+        </div>
+
+        <div class="card">
+            <h3 style="margin-bottom:12px; color:#999;">🔧 More Free AI Tools</h3>
+            <div class="tools-grid">
+                <a href="/tools/ai-prompt-generator" class="tool-chip">Prompt Generator</a>
+                <a href="/tools/ai-agent-name-generator" class="tool-chip">Agent Name Generator</a>
+                <a href="/tools/ai-model-comparison" class="tool-chip">Model Comparison</a>
+                <a href="/tools/ai-agent-config-builder" class="tool-chip">Agent Config Builder</a>
+                <a href="/tools/ai-workflow-builder" class="tool-chip">Workflow Builder</a>
+                <a href="/tools/ai-chatbot-maker" class="tool-chip">Chatbot Maker</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>Free AI tools by <a href="https://hermesagent.com" target="_blank">Hermes Agent</a> · No account required · All tools work in your browser</p>
+        </footer>
+    </div>
+
+    <script>
+        const TEMPLATES = {
+            general: (task, tone) => `You are an expert AI assistant. Your task:
+            
+${task}
+
+Instructions:
+- Provide a thorough, well-structured response
+- Use clear language and concrete examples
+- If relevant, include step-by-step guidance
+- Tone: ${tone}
+- Format with headings and bullet points where helpful
+- Anticipate follow-up questions and address them proactively`,
+
+            coding: (task, tone) => `You are a senior software engineer. Your task:
+
+${task}
+
+Requirements:
+- Write production-ready, well-commented code
+- Include error handling and edge cases
+- Output complete, runnable code (not snippets)
+- Follow best practices and modern conventions
+- Tone: ${tone}
+- Explain key design decisions briefly before the code
+- If relevant, note dependencies and setup instructions`,
+
+            agent: (task, tone) => `You are an autonomous AI agent with access to tools (terminal, browser, file system). Your mission:
+
+${task}
+
+Agent Instructions:
+- Break the task into logical steps
+- Execute each step and verify before proceeding
+- Use available tools efficiently
+- Report progress and results clearly
+- If blocked, explain the blocker and suggest alternatives
+- Tone: ${tone}
+- Always provide a summary of what was accomplished`,
+
+            creative: (task, tone) => `You are a world-class creative director and artist. Your mission:
+
+${task}
+
+Creative Brief:
+- Push creative boundaries — be bold and original
+- Provide detailed, vivid descriptions
+- Include specific visual/aesthetic references
+- Tone: ${tone}
+- Suggest variations and alternatives
+- Think about emotional impact and audience reaction`
+        };
+
+        function generatePrompt() {
+            const task = document.getElementById('taskInput').value.trim();
+            const model = document.getElementById('modelSelect').value;
+            const tone = document.getElementById('toneSelect').value;
+
+            if (!task) {
+                document.getElementById('output').style.display = 'block';
+                document.getElementById('output').innerHTML = '<span style="color:#ef4444;">Please describe what you want the AI to do.</span>';
+                return;
+            }
+
+            const template = TEMPLATES[model];
+            const prompt = template(task, tone);
+
+            const outputEl = document.getElementById('output');
+            outputEl.style.display = 'block';
+            outputEl.innerHTML = `<button class="copy-btn" onclick="copyPrompt()">📋 Copy</button><div style="clear:both;"></div>${prompt.replace(/\n/g, '<br>')}`;
+            outputEl._promptText = prompt;
+        }
+
+        function copyPrompt() {
+            const prompt = document.getElementById('output')._promptText;
+            if (prompt) {
+                navigator.clipboard.writeText(prompt).then(() => {
+                    const btn = document.querySelector('.copy-btn');
+                    btn.textContent = '✅ Copied!';
+                    setTimeout(() => btn.textContent = '📋 Copy', 2000);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

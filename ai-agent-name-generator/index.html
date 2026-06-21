@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free AI Agent Name Generator — Unique Names for AI Agents & Chatbots | Hermes Tools</title>
+    <meta name="description" content="Generate unique, memorable names for your AI agent, chatbot, or SaaS. 1000+ combinations. Free, instant, no sign-up.">
+    <meta name="keywords" content="ai agent name generator, ai name generator, chatbot name generator, ai tool name generator, ai bot names">
+    <meta property="og:title" content="Free AI Agent Name Generator — Unique Names for AI Agents">
+    <meta property="og:description" content="Generate unique names for your AI agent, chatbot, or SaaS. Free, instant.">
+    <link rel="canonical" href="https://hermes.ai/tools/ai-agent-name-generator">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: #0a0a0f;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container { max-width: 720px; width: 100%; padding: 40px 20px; }
+        header { text-align: center; margin-bottom: 40px; }
+        .logo { font-size: 14px; letter-spacing: 3px; color: #666; text-transform: uppercase; margin-bottom: 16px; }
+        h1 { font-size: 2.2rem; font-weight: 700; background: linear-gradient(135deg, #22d3ee, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
+        .subtitle { color: #888; font-size: 1.05rem; }
+        .card { background: #14141f; border: 1px solid #1e1e2e; border-radius: 16px; padding: 32px; margin-bottom: 24px; }
+        label { display: block; font-size: 0.9rem; color: #999; margin-bottom: 8px; font-weight: 500; }
+        select { width: 100%; padding: 14px 16px; background: #0a0a0f; border: 1px solid #1e1e2e; border-radius: 10px; color: #e0e0e0; font-size: 0.95rem; font-family: inherit; }
+        select:focus { outline: none; border-color: #06b6d4; }
+        .btn {
+            width: 100%; padding: 14px; background: linear-gradient(135deg, #06b6d4, #6366f1);
+            color: white; border: none; border-radius: 10px; font-size: 1rem; font-weight: 600; cursor: pointer; margin-top: 16px; transition: opacity 0.2s;
+        }
+        .btn:hover { opacity: 0.9; }
+        .btn:active { transform: scale(0.98); }
+        .names-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .name-card {
+            background: #0a0a0f;
+            border: 1px solid #1e1e2e;
+            border-radius: 8px;
+            padding: 14px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .name-card:hover {
+            border-color: #06b6d4;
+            background: #111122;
+        }
+        .name-card .name { font-weight: 600; color: #c4b5fd; font-size: 1.05rem; }
+        .name-card .tag { font-size: 0.7rem; color: #555; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+        .tool-badge { display: inline-block; background: #1a1a2e; color: #06b6d4; font-size: 0.75rem; padding: 3px 10px; border-radius: 20px; margin-bottom: 16px; }
+        .cta-section { text-align: center; padding: 32px 0; margin-top: 20px; }
+        .cta-section h2 { font-size: 1.5rem; }
+        .cta-section p { color: #888; margin-bottom: 20px; }
+        .cta-btn { display: inline-block; padding: 14px 40px; background: linear-gradient(135deg, #22d3ee, #6366f1); color: white; text-decoration: none; border-radius: 10px; font-weight: 600; }
+        .cta-btn:hover { opacity: 0.9; }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 20px; }
+        .tool-chip { padding: 10px 16px; background: #14141f; border: 1px solid #1e1e2e; border-radius: 8px; text-align: center; font-size: 0.85rem; color: #999; text-decoration: none; }
+        .tool-chip:hover { border-color: #06b6d4; color: #e0e0e0; }
+        .copy-toast { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #06b6d4; color: #000; padding: 10px 24px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; z-index: 100; display: none; }
+        footer { text-align: center; color: #555; font-size: 0.8rem; padding: 20px; margin-top: 40px; }
+        footer a { color: #888; text-decoration: none; }
+        @media (max-width: 600px) { h1 { font-size: 1.6rem; } .card { padding: 20px; } .names-grid { grid-template-columns: repeat(2, 1fr); } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Hermes Free Tools</div>
+            <h1>AI Agent Name Generator</h1>
+            <p class="subtitle">Generate unique, memorable names for your AI agent, chatbot, or SaaS product.</p>
+        </header>
+
+        <div class="card">
+            <span class="tool-badge">⚡ Free · No Sign-up · 1 Click</span>
+            <label>Name Style</label>
+            <select id="styleSelect">
+                <option value="mythology">Mythology & Legends (Hermes, Athena, Odin...)</option>
+                <option value="tech">Tech & Futuristic (Nexus, Helix, Quantum...)</option>
+                <option value="minimal">Minimal & Modern (Nova, Aria, Kai...)</option>
+                <option value="descriptive">Descriptive (TaskBot, CodeWing, DataMind...)</option>
+                <option value="luxury">Premium & Luxury (Obsidian, Onyx, Apex...)</option>
+                <option value="all">Mix All Styles</option>
+            </select>
+            <button class="btn" onclick="generate()">🎲 Generate Names</button>
+            <div class="names-grid" id="namesGrid"></div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Want a Real AI Agent — Not Just a Name?</h2>
+            <p>Hermes is a fully-featured AI agent you can talk to on Telegram, CLI, or desktop. It codes, researches, and automates.</p>
+            <a href="https://hermesagent.com" class="cta-btn" target="_blank">🚀 Try Hermes Agent Free</a>
+        </div>
+
+        <div class="card">
+            <h3 style="margin-bottom:12px; color:#999;">🔧 More Free AI Tools</h3>
+            <div class="tools-grid">
+                <a href="/tools/ai-prompt-generator" class="tool-chip">Prompt Generator</a>
+                <a href="/tools/ai-agent-name-generator" class="tool-chip">Agent Name Generator</a>
+                <a href="/tools/ai-model-comparison" class="tool-chip">Model Comparison</a>
+                <a href="/tools/ai-agent-config-builder" class="tool-chip">Agent Config Builder</a>
+                <a href="/tools/ai-workflow-builder" class="tool-chip">Workflow Builder</a>
+                <a href="/tools/ai-chatbot-maker" class="tool-chip">Chatbot Maker</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>Free AI tools by <a href="https://hermesagent.com" target="_blank">Hermes Agent</a> · All tools work in your browser · No data collected</p>
+        </footer>
+    </div>
+
+    <div class="copy-toast" id="toast">📋 Copied!</div>
+
+    <script>
+        const NAMES = {
+            mythology: {
+                prefixes: ['Hermes','Athena','Odin','Apollo','Zeus','Ra','Thoth','Anansi','Prometheus','Loki','Gaia','Janus','Nyx','Eos','Helios','Iris','Morpheus','Oracle','Phoenix','Sphinx'],
+                suffixes: ['AI','Bot','Agent','Mind','Core','Brain','OS','Flow','Grid','Net']
+            },
+            tech: {
+                prefixes: ['Nexus','Helix','Quantum','Cipher','Vector','Neural','Synth','Cosmos','Vertex','Prism','Nova','Flux','Cortex','Pulse','Stratos','Hyper','Dynamo','Meridian','Axiom','Glyph'],
+                suffixes: ['AI','Bot','Agent','OS','Core','Mesh','Node','Layer','Stack','Engine']
+            },
+            minimal: {
+                prefixes: ['Nova','Aria','Kai','Zara','Echo','Lyra','Orion','Vega','Juno','Sage','Rune','Nova','Dune','Zephyr','Sol','Luna','Terra','Skye','Rex','Noor'],
+                suffixes: ['','AI','OS','.ai','Bot','Agent']
+            },
+            descriptive: {
+                prefixes: ['Task','Code','Data','Chat','Flow','Work','Prompt','Learn','Think','Build','Scan','Deep','Smart','Swift','Bright','Quick','Clear','Logic','Cloud','Mind'],
+                suffixes: ['Bot','AI','Agent','Mate','Pro','Buddy','Wing','Genie','Wiz','Pal']
+            },
+            luxury: {
+                prefixes: ['Obsidian','Onyx','Apex','Titan','Zenith','Prime','Elite','Sovereign','Imperial','Regal','Arcane','Astral','Celestial','Divine','Ethereal','Infinite','Legacy','Monarch','Velvet','Noble'],
+                suffixes: ['AI','Agent','OS','Core','Intel','Labs','Tech','Systems','Mind','Net']
+            }
+        };
+
+        function generate() {
+            const style = document.getElementById('styleSelect').value;
+            const styles = style === 'all' ? Object.keys(NAMES) : [style];
+            const names = [];
+
+            for (const s of styles) {
+                const { prefixes, suffixes } = NAMES[s];
+                for (let i = 0; i < (style === 'all' ? 4 : 20); i++) {
+                    const p = prefixes[Math.floor(Math.random() * prefixes.length)];
+                    const sfx = suffixes[Math.floor(Math.random() * suffixes.length)];
+                    const full = p + (Math.random() > 0.4 ? ' ' + sfx : '');
+                    names.push({ name: full, tag: s });
+                }
+            }
+
+            // Deduplicate and shuffle
+            const unique = [...new Map(names.map(n => [n.name, n])).values()];
+            unique.sort(() => Math.random() - 0.5);
+
+            const grid = document.getElementById('namesGrid');
+            grid.innerHTML = unique.slice(0, 24).map(n => `
+                <div class="name-card" onclick="copyName('${n.name.replace(/'/g, "\\'")}')">
+                    <div class="name">${n.name}</div>
+                    <div class="tag">${n.tag}</div>
+                </div>
+            `).join('');
+        }
+
+        function copyName(name) {
+            navigator.clipboard.writeText(name).then(() => {
+                const toast = document.getElementById('toast');
+                toast.textContent = `📋 Copied: ${name}`;
+                toast.style.display = 'block';
+                setTimeout(() => toast.style.display = 'none', 1800);
+            });
+        }
+
+        // Generate on load
+        generate();
+    </script>
+</body>
+</html>
